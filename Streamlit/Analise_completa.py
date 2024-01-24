@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
 import warnings
+import requests
 warnings.filterwarnings("ignore")
 
 import matplotlib.ticker as ticker
