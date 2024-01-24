@@ -48,7 +48,7 @@ df = pd.read_csv(StringIO(response.text), sep=";")
 # Home Core Indicators
 # Dash: Country Profile; Dimension: Population aged 20 and over (thousands); Período: 2008 - 2022
 url_excel = 'https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Demografico_Pop_Idade_20_mais.xlsx'
-df_demografico_pop_20_mais = pd.read_excel(url_excel, engine='openpyxl')
+df_demografico_pop_20_mais = pd.read_excel(url_excel, engine='xlrd')
 #df_demografico_pop_20_mais = pd.read_excel(r'Demografico_Pop_Idade_20_mais.csv')
 
 # Carregando o arquivo
