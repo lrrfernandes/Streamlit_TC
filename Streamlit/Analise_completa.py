@@ -15,19 +15,7 @@ from io import StringIO
 from datetime import date
 from matplotlib.ticker import FuncFormatter
 
-# URL do arquivo CSV no GitHub
-csv_url = "https://github.com/Wellington8962/tech-challenge-01-streamlit/raw/main/Executavel_streamlit/CSV_Files/ExpVinho.csv"
 
-# Função para carregar um arquivo CSV a partir de uma URL
-def load_csv(url):
-    df = pd.read_csv(url)
-    return df
-
-# Carregar o DataFrame usando a função
-df = load_csv(csv_url)
-
-# Exibir o DataFrame usando Streamlit
-st.dataframe(df)
 
 # Título
 st.title('Aspectos Macroeconômicos das Exportações de Vinho no Brasil')
@@ -50,10 +38,8 @@ st.write(analise_economica)
 # CARREGANDO ARQUIVOS A SEREM UTILIZADOS
 
 # dados exportados do site da vinícola
-
-caminho_csv = "https://github.com/Wellington8962/tech-challenge-01-streamlit/blob/main/Executavel_streamlit/ExpVinho.csv"
-
-df = pd.read_csv(caminho_csv, sep=";")
+file_name = "ExpVinho.csv"
+df = pd.read_csv(file_name, sep=";")
 
 # dado demográfico do paraguay - popuplação +20 anos - fonte https://opendata.paho.org/en/core-indicators/core-indicators-dashboard
 # Home Core Indicators
