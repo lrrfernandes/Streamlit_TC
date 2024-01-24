@@ -36,7 +36,7 @@ st.write(analise_economica)
 
 
 # CARREGANDO ARQUIVOS A SEREM UTILIZADOS
-url = "https://github.com/Wellington8962/tech-challenge-01-streamlit/blob/main/Executavel_streamlit/CSV_Files/ExpVinho.csv"
+url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/ExpVinho.csv"
 response = requests.get(url)
 df = pd.read_csv(StringIO(response.text), sep=";")
 
