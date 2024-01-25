@@ -984,111 +984,111 @@ st.write(GPEstatistica)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# st.subheader("Análise Demográfica - Paraguai")
+st.subheader("Análise Demográfica - Paraguai")
 
-# consumo_2015_2019 = """
-# Foi estimado a quantidade de litros consumido de bebidas alcoólicas da população do Paraguai. A quantidade estimada de consumo alcoólico foi através da multiplicação entre quantidade de pessoas maiores de 20 anos e a quantidade de álcool consumido nos respectivos anos, entre 2015 e 2019.
-# O gráfico abaixo mostra o estimado de consumo alcoólico do Paraguai e o valor em litros exportado pelo estado do Rio Grande do Sul, entre 2015 a 2019.
-# A diferença entre os valores é muito grande, porém é possível verificar que a quantidade exportada segue a tendência do consumo alcoólico do país.
-# """
-# st.write(consumo_2015_2019)
+consumo_2015_2019 = """
+Foi estimado a quantidade de litros consumido de bebidas alcoólicas da população do Paraguai. A quantidade estimada de consumo alcoólico foi através da multiplicação entre quantidade de pessoas maiores de 20 anos e a quantidade de álcool consumido nos respectivos anos, entre 2015 e 2019.
+O gráfico abaixo mostra o estimado de consumo alcoólico do Paraguai e o valor em litros exportado pelo estado do Rio Grande do Sul, entre 2015 a 2019.
+A diferença entre os valores é muito grande, porém é possível verificar que a quantidade exportada segue a tendência do consumo alcoólico do país.
+"""
+st.write(consumo_2015_2019)
 
-# corr_retas = """
-# A correlação entre essas duas retas é de: **0,9041**.
+corr_retas = """
+A correlação entre essas duas retas é de: **0,9041**.
 
-# Esse crescente consumo de bebidas álcoolicas benefíciou a exportação de derivados de uva do Brasil. A população do Paraguai demandou mais bebidas álcoolicas e nossas vinícolas supriram em parte essa demanda.
-# """
-# st.write(corr_retas)
+Esse crescente consumo de bebidas álcoolicas benefíciou a exportação de derivados de uva do Brasil. A população do Paraguai demandou mais bebidas álcoolicas e nossas vinícolas supriram em parte essa demanda.
+"""
+st.write(corr_retas)
 
-# corr_ConsumoVsExportado = df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'].corr(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'])
+corr_ConsumoVsExportado = df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'].corr(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'])
 
 # corr_ConsumoVsExportado = round(corr_ConsumoVsExportado,4)
 
 # print(f"CORR: {corr_ConsumoVsExportado}")
 
-# df_consumo_alcool_litros_paraguay_2015_over = df_consumo_alcool_litros_paraguay_eua.query('Sex == "Both sexes" and Country == "Paraguay" and Year >= 2015')
+df_consumo_alcool_litros_paraguay_2015_over = df_consumo_alcool_litros_paraguay_eua.query('Sex == "Both sexes" and Country == "Paraguay" and Year >= 2015')
 
-# dados_paraguai_anos_15_20_import_vinhos_br_2015_over = dados_paraguai_anos_15_20_import_vinhos_br.query('País == "Paraguai" and Ano >= 2015')
+dados_paraguai_anos_15_20_import_vinhos_br_2015_over = dados_paraguai_anos_15_20_import_vinhos_br.query('País == "Paraguai" and Ano >= 2015')
 
-# correlacao_importacaoUSD_pessoasOver20 = dados_paraguai_anos_15_20_import_vinhos_br['import_br_usd'].corr(df_demografico_pop_20_mais['People'])
+correlacao_importacaoUSD_pessoasOver20 = dados_paraguai_anos_15_20_import_vinhos_br['import_br_usd'].corr(df_demografico_pop_20_mais['People'])
 
 # Mesclar os DataFrames com base na coluna 'Year'
-# df_consumo_alcool_litros_paraguay_2015_over_with_people = pd.merge(
- #    df_consumo_alcool_litros_paraguay_2015_over,
- #    df_demografico_pop_20_mais[['Year', 'People']],
- #    on='Year',
- #    how='left'  # Use 'left' para preservar todas as linhas do DataFrame de consumo
-# )
+df_consumo_alcool_litros_paraguay_2015_over_with_people = pd.merge(
+    df_consumo_alcool_litros_paraguay_2015_over,
+    df_demografico_pop_20_mais[['Year', 'People']],
+    on='Year',
+    how='left'  # Use 'left' para preservar todas as linhas do DataFrame de consumo
+)
 
-# df_consumo_alcool_litros_paraguay_2015_over_with_people['Liters_Total'] = df_consumo_alcool_litros_paraguay_2015_over_with_people['Liters'] * df_consumo_alcool_litros_paraguay_2015_over_with_people['People']
+df_consumo_alcool_litros_paraguay_2015_over_with_people['Liters_Total'] = df_consumo_alcool_litros_paraguay_2015_over_with_people['Liters'] * df_consumo_alcool_litros_paraguay_2015_over_with_people['People']
 
-# dados_paraguai_anos_15_20_import_vinhos_br_2015_over = dados_paraguai_anos_15_20_import_vinhos_br_2015_over.rename(columns={'Ano': 'Year'})
-# dados_paraguai_anos_15_20_import_vinhos_br_2015_over
+dados_paraguai_anos_15_20_import_vinhos_br_2015_over = dados_paraguai_anos_15_20_import_vinhos_br_2015_over.rename(columns={'Ano': 'Year'})
+dados_paraguai_anos_15_20_import_vinhos_br_2015_over
 
-# df_consumo_alcool_litros_paraguay_2015_over_with_people_2 = pd.merge(
-  #   df_consumo_alcool_litros_paraguay_2015_over_with_people,
-   #  dados_paraguai_anos_15_20_import_vinhos_br_2015_over[['Year', 'Quantidade']],
-  #   on='Year',
-#     how='left'  # Use 'left' para preservar todas as linhas do DataFrame de consumo
-# )
+df_consumo_alcool_litros_paraguay_2015_over_with_people_2 = pd.merge(
+    df_consumo_alcool_litros_paraguay_2015_over_with_people,
+    dados_paraguai_anos_15_20_import_vinhos_br_2015_over[['Year', 'Quantidade']],
+    on='Year',
+    how='left'  # Use 'left' para preservar todas as linhas do DataFrame de consumo
+)
 
 # Configuração do tamanho da figura
-# fig, ax = plt.subplots(figsize=(10, 8))
+fig, ax = plt.subplots(figsize=(10, 8))
 
 # Definição de cores
-# color1 = (128, 0, 128)
-# color2 = (190, 142, 230)
+color1 = (128, 0, 128)
+color2 = (190, 142, 230)
 
 # Normalizar os valores RGB para o intervalo [0, 1]
-# color1 = tuple(x / 255.0 for x in color1)
-# color2 = tuple(x / 255.0 for x in color2)
+color1 = tuple(x / 255.0 for x in color1)
+color2 = tuple(x / 255.0 for x in color2)
 
 # Plotar as linhas e adicionar rótulos nos pontos
-# plot1 = sns.lineplot(x='Year', y='Liters_Total', data=df_consumo_alcool_litros_paraguay_2015_over_with_people_2, label='Consumo estimado de bebidas alcoólicas', color=color1)
-# plot2 = sns.lineplot(x='Year', y='Quantidade', data=df_consumo_alcool_litros_paraguay_2015_over_with_people_2, label='Exportação do Rio Grande do Sul', color=color2)
+plot1 = sns.lineplot(x='Year', y='Liters_Total', data=df_consumo_alcool_litros_paraguay_2015_over_with_people_2, label='Consumo estimado de bebidas alcoólicas', color=color1)
+plot2 = sns.lineplot(x='Year', y='Quantidade', data=df_consumo_alcool_litros_paraguay_2015_over_with_people_2, label='Exportação do Rio Grande do Sul', color=color2)
 
 # Adicionar rótulos nos pontos para o plot1
-# for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
-#     plot1.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
-#                df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line], 
-#                f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line]:,.0f}", 
-#                ha='center', va='bottom', rotation=45)
+for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
+    plot1.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
+               df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line], 
+               f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line]:,.0f}", 
+               ha='center', va='bottom', rotation=45)
 
 
 # Adicionar rótulos nos pontos para o plot2
-# for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
-#     plot2.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
-#                df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line], 
-#                f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line]:,.0f}", 
-#                ha='center', va='bottom')
+for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
+    plot2.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
+               df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line], 
+               f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line]:,.0f}", 
+               ha='center', va='bottom')
 
 # Configurações adicionais do gráfico
-# plt.xticks(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'])
+plt.xticks(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'])
 
 # Formate a escala do eixo y para incluir separador de milhar com ponto
-# formatter = ticker.FuncFormatter(lambda x, pos: '{:,.0f}'.format(x).replace(',', '.'))
-# plt.gca().yaxis.set_major_formatter(formatter)
+formatter = ticker.FuncFormatter(lambda x, pos: '{:,.0f}'.format(x).replace(',', '.'))
+plt.gca().yaxis.set_major_formatter(formatter)
 
 # Coloque um limite para o valor y. Pegue o maior valor e coloque 20% a mais.
-# plt.ylim(0, 40000000)
+plt.ylim(0, 40000000)
 
 # Adicione rótulos e título ao gráfico
-# plt.xlabel('Ano', fontsize=14, labelpad=15)
-# plt.ylabel('Quantidade (litros)', fontsize=14, labelpad=15)
-# plt.title('Paraguai - Consumo de bebidas alcoólicas x Quantidade Exportada', fontsize=16, pad=20)
+plt.xlabel('Ano', fontsize=14, labelpad=15)
+plt.ylabel('Quantidade (litros)', fontsize=14, labelpad=15)
+plt.title('Paraguai - Consumo de bebidas alcoólicas x Quantidade Exportada', fontsize=16, pad=20)
 
 # Ajustando o layout para evitar cortes
-# plt.tight_layout()
+plt.tight_layout()
 
 # Adicionando a legenda
-# plt.legend()
+plt.legend()
 
 # Exibindo o gráfico
-# st.pyplot(fig)
-# st.markdown(
-#     "<div style='text-align: center; font-size: 13px;'>Fontes da análise demográfica: População Maior de 20 anos do Paraguai | Consumo de álcool no Paraguai | Exportação do Rio Grande do Sul</div>",
-#     unsafe_allow_html=True
-# )
+st.pyplot(fig)
+st.markdown(
+    "<div style='text-align: center; font-size: 13px;'>Fontes da análise demográfica: População Maior de 20 anos do Paraguai | Consumo de álcool no Paraguai | Exportação do Rio Grande do Sul</div>",
+    unsafe_allow_html=True
+)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
