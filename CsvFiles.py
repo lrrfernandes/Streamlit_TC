@@ -65,8 +65,8 @@ st.dataframe(df)
 # Dash: Country Profile; Dimension: Population aged 20 and over (thousands); Período: 2008 - 2022
 
 
-file_name = "Demografico_Pop_Idade_20_mais.xlsx"
-df_demografico_pop_20_mais = pd.read_excel(file_name) 
+file_name = "Demografico_Pop_Idade_20_mais.csv"
+df_demografico_pop_20_mais = pd.read_csv(file_name, sep=';') 
 
 # st.dataframe(df_demografico_pop_20_mais)
 
@@ -80,8 +80,8 @@ df_demografico_pop_20_mais = pd.read_excel(file_name)
 # dado demográfico do paraguay - popuplação +20 anos - fonte https://www.paho.org/en/enlace/alcohol-consumption
 # Home  ENLACE: Data Portal on Noncommunicable Diseases, Mental Health, and External Causes  Alcohol consumption
 # Dash: Level of alcohol consumption; Country: Paraguay and EUA
-file_name = "Consumo_Alcool_Paraguay_EUA.xlsx"
-df_consumo_alcool_litros_paraguay_eua = pd.read_excel(file_name) 
+file_name = "Consumo_Alcool_Paraguay_EUA.csv"
+df_consumo_alcool_litros_paraguay_eua = pd.read_csv(file_name, sep=';') 
 
 # url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Consumo_Alcool_Paraguay_EUA.csv"
 # response = requests.get(url)
@@ -91,8 +91,8 @@ df_consumo_alcool_litros_paraguay_eua = pd.read_excel(file_name)
 # Comunicado ténico 226 - Vitivinicultura Brasileira: panorama 2021
 # fonte https://ainfo.cnptia.embrapa.br/digital/bitstream/doc/1149674/1/Com-Tec-226.pdf
 
-file_name = "Viticultura_brasileira.xlsx"
-df_br_estado_producao_uvas_ton = pd.read_excel(file_name) 
+file_name = "Viticultura_brasileira.csv"
+df_br_estado_producao_uvas_ton = pd.read_csv(file_name, sep=';')
 
 # url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Viticultura_brasileira.csv"
 # response = requests.get(url)
@@ -101,8 +101,8 @@ df_br_estado_producao_uvas_ton = pd.read_excel(file_name)
 
 # dados sobre importação do paraguay de vinho provindo do Brasil - fonte Paraguai2021.pdf
 
-file_name = "import_vinhos_br.xlsx"
-dados_import_vinhos_br = pd.read_excel(file_name)
+file_name = "import_vinhos_br.csv"
+dados_import_vinhos_br = pd.read_csv(file_name, sep=';')
 
 # url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/import_vinhos_br.csv"
 # response = requests.get(url)
