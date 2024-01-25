@@ -11113,7 +11113,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.subheader("Indicações Geográficas (IG) de Vinhos do Brasil e Associações de Produtores")
 
 # Adicionando a imagem
-st.image("indicacoes_geograficas.jpg", caption="Fonte: https://www.embrapa.br/uva-e-vinho/indicacoes-geograficas-de-vinhos-do-brasil", use_column_width=True)
+# st.image("indicacoes_geograficas.jpg", caption="Fonte: https://www.embrapa.br/uva-e-vinho/indicacoes-geograficas-de-vinhos-do-brasil", use_column_width=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
