@@ -17,25 +17,6 @@ from matplotlib.ticker import FuncFormatter
 import os
 import requests
 
-def download_csv_from_github(url, filename):
-    try:
-        response = requests.get(url)
-        # Check if the request was successful
-        if response.status_code == 200:
-            # Get the current directory where the script is located
-            current_dir = os.path.dirname(os.path.abspath(__file__))
-            # Construct the full path to save the CSV file in the same directory
-            save_path = os.path.join(current_dir, filename)
-            # Write the content of the response to the local CSV file
-            with open(save_path, 'wb') as file:
-                file.write(response.content)
-            print(f"CSV file downloaded successfully to {save_path}.")
-        else:
-            # Print an error message if the request was not successful
-            print(f"Failed to download CSV file. Status code: {response.status_code}")
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
-
 titulo_principal = """
 <h1 style="color: #5e9ca0;"><span style="background-color: #ffffff; color: #993366;">Clube Wine S.A.</span></h1>
 <h2><span style="background-color: #ffffff; color: #993366;">Departamento de Ci&ecirc;ncia de Dados</span></h2>
@@ -71,10 +52,9 @@ st.write(analise_economica)
 # response = requests.get(url)
 # df = pd.read_csv(StringIO(response.text), sep=";")
 
-filename = "/mount/src/streamlit_tc/Streamlit/ExpVinho.csv"
-url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/ExpVinho.csv"
-download_csv_from_github(url, filename)
-df = pd.read_csv(filename, sep=";")
+# filename = "/mount/src/streamlit_tc/Streamlit/ExpVinho.csv"
+df = pd.read_csv('EXP_VINHO.csv')
+# df = pd.read_csv(filename, sep=";")
 st.dataframe(df)
 
 # dados exportados do site da vinícola
