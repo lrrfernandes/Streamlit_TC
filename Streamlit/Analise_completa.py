@@ -1034,7 +1034,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 paleta = sns.color_palette("rocket_r", 24)
 
 # Configuração do tamanho total do gráfico
-fig, axes = plt.subplots(2, 2, figsize=(12, 7))
+fig, axes = plt.subplots(2, 2, figsize=(24, 7))
 
 # Loop para criar quatro subplots
 anos = ["ANO_2018", "ANO_2019", "ANO_2020", "ANO_2021"]
@@ -10984,21 +10984,21 @@ st.write(GPEstatistica)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-st.subheader("Análise Demográfica - Paraguai")
+# st.subheader("Análise Demográfica - Paraguai")
 
-consumo_2015_2019 = """
-Foi estimado a quantidade de litros consumido de bebidas alcoólicas da população do Paraguai. A quantidade estimada de consumo alcoólico foi através da multiplicação entre quantidade de pessoas maiores de 20 anos e a quantidade de álcool consumido nos respectivos anos, entre 2015 e 2019.
-O gráfico abaixo mostra o estimado de consumo alcoólico do Paraguai e o valor em litros exportado pelo estado do Rio Grande do Sul, entre 2015 a 2019.
-A diferença entre os valores é muito grande, porém é possível verificar que a quantidade exportada segue a tendência do consumo alcoólico do país.
-"""
-st.write(consumo_2015_2019)
+# consumo_2015_2019 = """
+# Foi estimado a quantidade de litros consumido de bebidas alcoólicas da população do Paraguai. A quantidade estimada de consumo alcoólico foi através da multiplicação entre quantidade de pessoas maiores de 20 anos e a quantidade de álcool consumido nos respectivos anos, entre 2015 e 2019.
+# O gráfico abaixo mostra o estimado de consumo alcoólico do Paraguai e o valor em litros exportado pelo estado do Rio Grande do Sul, entre 2015 a 2019.
+# A diferença entre os valores é muito grande, porém é possível verificar que a quantidade exportada segue a tendência do consumo alcoólico do país.
+# """
+# st.write(consumo_2015_2019)
 
-corr_retas = """
-A correlação entre essas duas retas é de: **0,9041**.
+# corr_retas = """
+# A correlação entre essas duas retas é de: **0,9041**.
 
-Esse crescente consumo de bebidas álcoolicas benefíciou a exportação de derivados de uva do Brasil. A população do Paraguai demandou mais bebidas álcoolicas e nossas vinícolas supriram em parte essa demanda.
-"""
-st.write(corr_retas)
+# Esse crescente consumo de bebidas álcoolicas benefíciou a exportação de derivados de uva do Brasil. A população do Paraguai demandou mais bebidas álcoolicas e nossas vinícolas supriram em parte essa demanda.
+# """
+# st.write(corr_retas)
 
 # corr_ConsumoVsExportado = df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'].corr(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'])
 
