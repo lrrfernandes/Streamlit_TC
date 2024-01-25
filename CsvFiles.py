@@ -806,15 +806,15 @@ dados = pd.read_csv(caminho, encoding='ISO-8859-1', skiprows=0, sep=';', skipfoo
 
 # dados = pd.read_csv("TAXA_CAMBIO_HISTORICO.csv", encoding='ISO-8859-1', skiprows=0, sep=';', skipfooter=12, thousands='.', decimal=',', engine ="python")
 
-text_io = text_io_exp_vinho
-text = StringIO(text_io)
-dados_vinho = pd.read_csv(text, sep=";")
-text_io = """
-"""
-text = """
-"""
+# text_io = text_io_exp_vinho
+# text = StringIO(text_io)
+# dados_vinho = pd.read_csv(text, sep=";")
+# text_io = """
+# """
+# text = """
+# """
 
-# dados_vinho = pd.read_csv("ExpVinho.csv", sep=";") 
+dados_vinho = pd.read_csv("ExpVinho.csv", sep=";") 
 
 # RENOMEANDO COLUNAS
 primeira_coluna = dados.columns[0]
