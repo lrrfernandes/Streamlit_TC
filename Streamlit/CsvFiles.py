@@ -71,7 +71,7 @@ st.write(analise_economica)
 # response = requests.get(url)
 # df = pd.read_csv(StringIO(response.text), sep=";")
 
-filename = "ExpVinho.csv"
+filename = "/mount/src/streamlit_tc/Streamlit/ExpVinho.csv"
 url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/ExpVinho.csv"
 download_csv_from_github(url, filename)
 df = pd.read_csv(filename, sep=";")
