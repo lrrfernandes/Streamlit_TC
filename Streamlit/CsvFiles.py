@@ -53,7 +53,7 @@ st.write(analise_economica)
 # df = pd.read_csv(StringIO(response.text), sep=";")
 
 # filename = "/mount/src/streamlit_tc/Streamlit/ExpVinho.csv"
-df = pd.read_csv('EXP_VINHO.csv')
+df = pd.read_csv('EXP_VINHO.csv', sep=';')
 # df = pd.read_csv(filename, sep=";")
 st.dataframe(df)
 
