@@ -4,6 +4,4 @@ pandas
 numpy
 matplotlib
 seaborn
-requests
-openpyxl
 
