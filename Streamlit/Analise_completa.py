@@ -40,6 +40,7 @@ st.write(analise_economica)
 url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/ExpVinho.csv"
 response = requests.get(url)
 df = pd.read_csv(StringIO(response.text), sep=";")
+df.set_index(df.columns[0], inplace=True)
 st.dataframe(df)
 
 # dados exportados do site da vinícola
