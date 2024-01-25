@@ -11189,11 +11189,19 @@ plot1 = sns.lineplot(x='Year', y='Liters_Total', data=df_consumo_alcool_litros_p
 plot2 = sns.lineplot(x='Year', y='Quantidade', data=df_consumo_alcool_litros_paraguay_2015_over_with_people_2, label='Exportação do Rio Grande do Sul', color=color2)
 
 # Adicionar rótulos nos pontos para o plot1
+# for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
+#     plot1.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
+#                df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line], 
+#                f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line]:,.0f}", 
+#                ha='center', va='bottom', rotation=45)
+    
 for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
+    liters_total = float(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line])
     plot1.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
-               df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line], 
-               f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line]:,.0f}", 
+               liters_total, 
+               f"{liters_total:,.0f}", 
                ha='center', va='bottom', rotation=45)
+
 
 # Adicionar rótulos nos pontos para o plot2
 for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
