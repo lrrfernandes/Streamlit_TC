@@ -11194,21 +11194,14 @@ plot2 = sns.lineplot(x='Year', y='Quantidade', data=df_consumo_alcool_litros_par
 #                df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line], 
 #                f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line]:,.0f}", 
 #                ha='center', va='bottom', rotation=45)
-    
-for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
-    liters_total = float(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line])
-    plot1.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
-               liters_total, 
-               f"{liters_total:,.0f}", 
-               ha='center', va='bottom', rotation=45)
 
 
 # Adicionar rótulos nos pontos para o plot2
-for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
-    plot2.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
-               df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line], 
-               f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line]:,.0f}", 
-               ha='center', va='bottom')
+# for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
+#     plot2.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
+#                df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line], 
+#                f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line]:,.0f}", 
+#                ha='center', va='bottom')
 
 # Configurações adicionais do gráfico
 plt.xticks(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'])
