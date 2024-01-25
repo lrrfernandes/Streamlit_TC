@@ -14,6 +14,12 @@ from io import StringIO
 from datetime import date
 from matplotlib.ticker import FuncFormatter
 
+titulo_principal = """
+<h1 style="color: #5e9ca0;">&Aacute;rea do Investidor do Agroneg&oacute;cio</h1>
+<pre style="color: #2e6c80;">Reportagem de: Wellington, Andr&eacute;, Raphael, David, Lucas</pre>
+"""
+st.markdown(titulo_principal, unsafe_allow_html=True)
+
 # Título
 st.title('Aspectos Macroeconômicos das Exportações de Vinho no Brasil')
 
