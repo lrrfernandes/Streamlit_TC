@@ -75,7 +75,7 @@ filename = "/mount/src/streamlit_tc/Streamlit/ExpVinho.csv"
 url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/ExpVinho.csv"
 download_csv_from_github(url, filename)
 df = pd.read_csv(filename, sep=";")
-# st.dataframe(df)
+st.dataframe(df)
 
 # dados exportados do site da vinícola
 # df = pd.read_csv('ExpVinho.csv', sep=";")
