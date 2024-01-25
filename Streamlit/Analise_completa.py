@@ -15,9 +15,12 @@ from datetime import date
 from matplotlib.ticker import FuncFormatter
 
 titulo_principal = """
-<h1 style="color: #5e9ca0;">&Aacute;rea do Investidor do Agroneg&oacute;cio</h1>
-<pre style="color: #2e6c80;">Reportagem de: Wellington Brito, Andr&eacute; Pedroso, Raphael Gottstein, David Oliveira, Lucas Fernandes</pre>
-<pre style="color: #2e6c80;">Data: Janeiro/2024</pre>
+<h1 style="color: #5e9ca0;"><span style="background-color: #ffffff; color: #993366;">Clube Wine S.A.</span></h1>
+<h2><span style="background-color: #ffffff; color: #993366;">Departamento de Ci&ecirc;ncia de Dados</span></h2>
+<p>&nbsp;</p>
+<h1 style="color: #5e9ca0;"><span style="text-decoration: underline;">&Aacute;rea do Investidor</span> - An&aacute;lise da Viticultura do Rio Grande do Sul</h1>
+<p>&nbsp;</p>
+<pre style="color: #2e6c80;">Cientistas de Dados: Wellington, Andr&eacute;, Raphael, David, Lucas</pre>
 """
 st.markdown(titulo_principal, unsafe_allow_html=True)
 
@@ -27,7 +30,7 @@ st.title('Aspectos Macroeconômicos das Exportações de Vinho no Brasil')
 st.markdown("<br>", unsafe_allow_html=True)
 
 objetivo = """
-Nesta reportagem, você vai ver uma análise da macroeconomia das exportações de vinho do Rio Grande do Sul. O intuito é identificar os principais países importadores do nosso produto, avaliar a influência da taxa de câmbio do dólar sobre as exportações e examinar as condições climáticas que justificam a posição dominante da nossa região, o Rio Grande do Sul, responsável por mais de 90% da produção de vinho no Brasil.
+Nesta análise, você vai ver a macroeconomia das exportações de vinho do Rio Grande do Sul. O intuito é identificar os principais países importadores do nosso produto, avaliar a influência da taxa de câmbio do dólar sobre as exportações e examinar as condições climáticas que justificam a posição dominante da nossa região, o Rio Grande do Sul, responsável por mais de 90% da produção de vinho no Brasil.
 """
 st.write(objetivo)
 
