@@ -1013,8 +1013,8 @@ color2 = tuple(x / 255.0 for x in color2)
 # Criando o gráfico no Streamlit com modificações
 fig, ax = plt.subplots(figsize=(8, 6))
 
-sns.lineplot(x='Ano', y='import_br_usd', data=dados_paraguai_anos_15_20_import_vinhos_br, label='BR - Exportação Derivados da Uva', color=color1, ax=ax)
-# sns.lineplot(x='Ano', y='ValorUSD', data=dados_paraguai_anos_15_20_import_vinhos_br, label='RS - Exportação Derivados da Uva', color=color2, ax=ax)
+# sns.lineplot(x='Ano', y='import_br_usd', data=dados_paraguai_anos_15_20_import_vinhos_br, label='BR - Exportação Derivados da Uva', color=color1, ax=ax)
+sns.lineplot(x='Ano', y='ValorUSD', data=dados_paraguai_anos_15_20_import_vinhos_br, label='RS - Exportação Derivados da Uva', color=color2, ax=ax)
 
 ax.set_xticks(dados_paraguai_anos_15_20_import_vinhos_br['Ano'])
 ax.set_xticklabels(dados_paraguai_anos_15_20_import_vinhos_br['Ano'], rotation=45, ha='right')
