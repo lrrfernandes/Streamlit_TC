@@ -174,7 +174,7 @@ Id;País;1970;1970;1971;1971;1972;1972;1973;1973;1974;1974;1975;1975;1976;1976;1
 """
 text = StringIO(text_io)
 df = pd.read_csv(text, sep=";")
-st.dataframe(df)
+# st.dataframe(df)
 
 # dados exportados do site da vinícola
 # df = pd.read_csv('ExpVinho.csv', sep=";")
@@ -182,9 +182,32 @@ st.dataframe(df)
 # dado demográfico do paraguay - popuplação +20 anos - fonte https://opendata.paho.org/en/core-indicators/core-indicators-dashboard
 # Home Core Indicators
 # Dash: Country Profile; Dimension: Population aged 20 and over (thousands); Período: 2008 - 2022
-url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Demografico_Pop_Idade_20_mais.csv"
-response = requests.get(url)
-df_demografico_pop_20_mais = pd.read_csv(StringIO(response.text), sep=";")
+
+text_io = """
+Dimension;sub_dimension;Indicator;Year;People
+Sociodemographic;Demographic;Population_aged_20_and_over;2008;3094000
+Sociodemographic;Demographic;Population_aged_20_and_over;2009;3164000
+Sociodemographic;Demographic;Population_aged_20_and_over;2010;324000
+Sociodemographic;Demographic;Population_aged_20_and_over;2011;3322000
+Sociodemographic;Demographic;Population_aged_20_and_over;2012;3407000
+Sociodemographic;Demographic;Population_aged_20_and_over;2013;3493000
+Sociodemographic;Demographic;Population_aged_20_and_over;2014;3579000
+Sociodemographic;Demographic;Population_aged_20_and_over;2015;3666000
+Sociodemographic;Demographic;Population_aged_20_and_over;2016;3752000
+Sociodemographic;Demographic;Population_aged_20_and_over;2017;3837000
+Sociodemographic;Demographic;Population_aged_20_and_over;2018;3921000
+Sociodemographic;Demographic;Population_aged_20_and_over;2019;4003000
+Sociodemographic;Demographic;Population_aged_20_and_over;2020;4084000
+Sociodemographic;Demographic;Population_aged_20_and_over;2021;4159000
+Sociodemographic;Demographic;Population_aged_20_and_over;2022;4225000
+"""
+text = StringIO(text_io)
+df_demografico_pop_20_mais = pd.read_csv(text, sep=";")
+# st.dataframe(df_demografico_pop_20_mais)
+
+# url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Demografico_Pop_Idade_20_mais.csv"
+# response = requests.get(url)
+# df_demografico_pop_20_mais = pd.read_csv(StringIO(response.text), sep=";")
 
 # df_demografico_pop_20_mais = pd.read_excel(r'Demografico_Pop_Idade_20_mais.csv')
 
@@ -193,24 +216,194 @@ df_demografico_pop_20_mais = pd.read_csv(StringIO(response.text), sep=";")
 # Home  ENLACE: Data Portal on Noncommunicable Diseases, Mental Health, and External Causes  Alcohol consumption
 # Dash: Level of alcohol consumption; Country: Paraguay and EUA
 
-url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Consumo_Alcool_Paraguay_EUA.csv"
-response = requests.get(url)
-df_consumo_alcool_litros_paraguay_eua = pd.read_csv(StringIO(response.text), sep=";")
+text_io = """
+Country;Year;Sex;Liters
+Paraguay;2000;Male;9,82
+Paraguay;2001;Male;9,82
+Paraguay;2002;Male;9,16
+Paraguay;2003;Male;9,01
+Paraguay;2004;Male;9,49
+Paraguay;2005;Male;10,43
+Paraguay;2006;Male;11,00
+Paraguay;2007;Male;11,92
+Paraguay;2008;Male;12,06
+Paraguay;2009;Male;12,27
+Paraguay;2010;Male;11,85
+Paraguay;2011;Male;11,74
+Paraguay;2012;Male;11,36
+Paraguay;2013;Male;10,92
+Paraguay;2014;Male;10,58
+Paraguay;2015;Male;10,43
+Paraguay;2016;Male;10,54
+Paraguay;2017;Male;10,80
+Paraguay;2018;Male;10,96
+Paraguay;2019;Male;10,96
+Paraguay;2000;Female;2,63
+Paraguay;2001;Female;2,63
+Paraguay;2002;Female;2,45
+Paraguay;2003;Female;2,41
+Paraguay;2004;Female;2,54
+Paraguay;2005;Female;2,79
+Paraguay;2006;Female;2,95
+Paraguay;2007;Female;3,21
+Paraguay;2008;Female;3,25
+Paraguay;2009;Female;3,31
+Paraguay;2010;Female;3,19
+Paraguay;2011;Female;3,16
+Paraguay;2012;Female;3,06
+Paraguay;2013;Female;2,94
+Paraguay;2014;Female;2,85
+Paraguay;2015;Female;2,81
+Paraguay;2016;Female;2,83
+Paraguay;2017;Female;2,90
+Paraguay;2018;Female;2,94
+Paraguay;2019;Female;2,94
+Paraguay;2000;Both sexes;6,27
+Paraguay;2001;Both sexes;6,27
+Paraguay;2002;Both sexes;5,84
+Paraguay;2003;Both sexes;5,74
+Paraguay;2004;Both sexes;6,05
+Paraguay;2005;Both sexes;6,66
+Paraguay;2006;Both sexes;7,03
+Paraguay;2007;Both sexes;7,62
+Paraguay;2008;Both sexes;7,71
+Paraguay;2009;Both sexes;7,85
+Paraguay;2010;Both sexes;7,59
+Paraguay;2011;Both sexes;7,52
+Paraguay;2012;Both sexes;7,28
+Paraguay;2013;Both sexes;7,00
+Paraguay;2014;Both sexes;6,78
+Paraguay;2015;Both sexes;6,68
+Paraguay;2016;Both sexes;6,74
+Paraguay;2017;Both sexes;6,91
+Paraguay;2018;Both sexes;7,01
+Paraguay;2019;Both sexes;7,01
+United States of America;2000;Male;14,66
+United States of America;2001;Male;14,66
+United States of America;2002;Male;14,68
+United States of America;2003;Male;14,71
+United States of America;2004;Male;14,74
+United States of America;2005;Male;14,77
+United States of America;2006;Male;14,82
+United States of America;2007;Male;14,84
+United States of America;2008;Male;14,79
+United States of America;2009;Male;14,61
+United States of America;2010;Male;14,54
+United States of America;2011;Male;14,68
+United States of America;2012;Male;14,91
+United States of America;2013;Male;15,07
+United States of America;2014;Male;15,13
+United States of America;2015;Male;15,24
+United States of America;2016;Male;15,33
+United States of America;2017;Male;15,41
+United States of America;2018;Male;15,44
+United States of America;2019;Male;15,44
+United States of America;2000;Female;4,39
+United States of America;2001;Female;4,39
+United States of America;2002;Female;4,40
+United States of America;2003;Female;4,43
+United States of America;2004;Female;4,45
+United States of America;2005;Female;4,47
+United States of America;2006;Female;4,50
+United States of America;2007;Female;4,50
+United States of America;2008;Female;4,47
+United States of America;2009;Female;4,41
+United States of America;2010;Female;4,38
+United States of America;2011;Female;4,43
+United States of America;2012;Female;4,51
+United States of America;2013;Female;4,56
+United States of America;2014;Female;4,58
+United States of America;2015;Female;4,62
+United States of America;2016;Female;4,65
+United States of America;2017;Female;4,68
+United States of America;2018;Female;4,69
+United States of America;2019;Female;4,69
+United States of America;2000;Both sexes;9,40
+United States of America;2001;Both sexes;9,40
+United States of America;2002;Both sexes;9,42
+United States of America;2003;Both sexes;9,45
+United States of America;2004;Both sexes;9,47
+United States of America;2005;Both sexes;9,50
+United States of America;2006;Both sexes;9,54
+United States of America;2007;Both sexes;9,56
+United States of America;2008;Both sexes;9,52
+United States of America;2009;Both sexes;9,40
+United States of America;2010;Both sexes;9,36
+United States of America;2011;Both sexes;9,45
+United States of America;2012;Both sexes;9,60
+United States of America;2013;Both sexes;9,71
+United States of America;2014;Both sexes;9,76
+United States of America;2015;Both sexes;9,83
+United States of America;2016;Both sexes;9,89
+United States of America;2017;Both sexes;9,95
+United States of America;2018;Both sexes;9,97
+United States of America;2019;Both sexes;9,97
+"""
+text = StringIO(text_io)
+df_consumo_alcool_litros_paraguay_eua = pd.read_csv(text, sep=";")
+
+# url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Consumo_Alcool_Paraguay_EUA.csv"
+# response = requests.get(url)
+# df_consumo_alcool_litros_paraguay_eua = pd.read_csv(StringIO(response.text), sep=";")
 # df_consumo_alcool_litros_paraguay_eua = pd.read_excel("Consumo_Alcool_Paraguay_EUA.xlsx") 
 
 # Comunicado ténico 226 - Vitivinicultura Brasileira: panorama 2021
 # fonte https://ainfo.cnptia.embrapa.br/digital/bitstream/doc/1149674/1/Com-Tec-226.pdf
 
-url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Viticultura_brasileira.csv"
-response = requests.get(url)
-df_br_estado_producao_uvas_ton = pd.read_csv(StringIO(response.text), sep=";")
+text_io = """
+ESTADOS;ANO_2018;ANO_2019;ANO_2020;ANO_2021
+Acre;0;0;0;0
+Alagoas;0;0;0;0
+Amapá;0;0;0;0
+Amazonas;0;0;0;0
+Bahia;75378;74142;45342;61274
+Ceará;422;564;763;521
+Distrito Federal;1425;1235;1267;1309
+Espírito Santo;3090;3207;3370;3040
+Goiás;2121;1656;1411;1496
+Maranhão;0;0;0;0
+Mato Grosso;1297;1304;1287;1290
+Mato Grosso do Sul;72;72;59;57
+Minas Gerais;15763;17307;18723;19571
+Pará;0;0;0;0
+Paraíba;2600;2600;2600;2600
+Paraná;54000;48000;57556;57000
+Pernambuco;423382;420830;338837;390640
+Piauí;51;24;120;96
+Rio de Janeiro;170;206;191;86
+Rio Grande do Norte;0;0;0;0
+Rio Grande do Sul;822689;666423;735358;951567
+Rondônia;187;219;197;124
+Roraima;0;0;0;0
+Santa Catarina;61256;59525;60388;59638
+São Paulo;128327;148379;148919;147359
+Sergipe;0;0;0;0
+Tocantins;12;12;12;12
+"""
+text = StringIO(text_io)
+df_br_estado_producao_uvas_ton = pd.read_csv(text, sep=";")
+
+# url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Viticultura_brasileira.csv"
+# response = requests.get(url)
+# df_br_estado_producao_uvas_ton = pd.read_csv(StringIO(response.text), sep=";")
 # df_br_estado_producao_uvas_ton = pd.read_excel("Viticultura_brasileira.xlsx") 
 
 # dados sobre importação do paraguay de vinho provindo do Brasil - fonte Paraguai2021.pdf
 
-url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/import_vinhos_br.csv"
-response = requests.get(url)
-dados_import_vinhos_br = pd.read_csv(StringIO(response.text), sep=";")
+text_io = """
+ano;usd
+2015;928224,00
+2016;1894680,00
+2017;4786678,00
+2018;6035132,00
+2019;4798148,00
+"""
+text = StringIO(text_io)
+dados_import_vinhos_br = pd.read_csv(text, sep=";")
+
+# url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/import_vinhos_br.csv"
+# response = requests.get(url)
+# dados_import_vinhos_br = pd.read_csv(StringIO(response.text), sep=";")
 # dados_import_vinhos_br = pd.read_excel("import_vinhos_br.xlsx")
 
 # TRATAMENTO DE DADOS
