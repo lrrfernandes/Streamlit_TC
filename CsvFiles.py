@@ -814,7 +814,7 @@ dados = pd.read_csv(caminho, encoding='ISO-8859-1', skiprows=0, sep=';', skipfoo
 # text = """
 # """
 
-dados_vinho = pd.read_csv("ExpVinho.csv", sep=";") 
+dados_vinho = pd.read_csv("EXP_VINHO.csv", sep=";") 
 
 # RENOMEANDO COLUNAS
 primeira_coluna = dados.columns[0]
