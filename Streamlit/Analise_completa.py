@@ -14,9 +14,6 @@ from io import StringIO
 from datetime import date
 from matplotlib.ticker import FuncFormatter
 
-# Função principal do seu aplicativo
-@st.cache
-def meu_aplicativo():
     
     titulo_principal = """
     <h1 style="color: #5e9ca0;"><span style="background-color: #ffffff; color: #993366;">Clube Wine S.A.</span></h1>
@@ -13373,4 +13370,4 @@ def meu_aplicativo():
     """
     st.write(referencias)
 
-meu_aplicativo()
+
