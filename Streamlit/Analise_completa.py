@@ -960,89 +960,89 @@ st.markdown(
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-st.subheader("Um olhar especial para o Paraguai")
+st.subheader("Um olhar especial para o Rio Grande do Sul")
 
-top_paises_vinho = ['Paraguai']
-dados_paraguai = final_data_vinho[final_data_vinho['País'].isin(top_paises_vinho)]
+# top_paises_vinho = ['Paraguai']
+# dados_paraguai = final_data_vinho[final_data_vinho['País'].isin(top_paises_vinho)]
 
-anos = list(range(2015, 2020))
-dados_paraguai_anos_15_20 = dados_paraguai[dados_paraguai['Ano'].isin(anos)]
+# anos = list(range(2015, 2020))
+# dados_paraguai_anos_15_20 = dados_paraguai[dados_paraguai['Ano'].isin(anos)]
 
 # Criar um dicionário de DataFrames
 # dados_import_vinhos_br - USD importados somente do Brasil
-dicionario = {'Paraguai': dados_paraguai_anos_15_20, 'DadosImportBR': dados_import_vinhos_br}
+# dicionario = {'Paraguai': dados_paraguai_anos_15_20, 'DadosImportBR': dados_import_vinhos_br}
 
 # Definir uma função de merge que usa a coluna 'Ano' como chave
-def merge_dataframes(left_df, right_df):
-    return pd.merge(left_df, right_df, left_on='Ano', right_on='ano', how='inner')
+# def merge_dataframes(left_df, right_df):
+#     return pd.merge(left_df, right_df, left_on='Ano', right_on='ano', how='inner')
 
 # Inicializar o DataFrame final com um dos DataFrames
-dados_paraguai_anos_15_20_import_vinhos_br = dicionario['Paraguai']
+# dados_paraguai_anos_15_20_import_vinhos_br = dicionario['Paraguai']
 
 # Iterar sobre os outros DataFrames e mesclar com o DataFrame final
-for nome_df, df in dicionario.items():
-    if nome_df != 'Paraguai':  # Para evitar mesclar consigo mesmo
-        dados_paraguai_anos_15_20_import_vinhos_br = merge_dataframes(dados_paraguai_anos_15_20_import_vinhos_br, df)
+# for nome_df, df in dicionario.items():
+#     if nome_df != 'Paraguai':  # Para evitar mesclar consigo mesmo
+#         dados_paraguai_anos_15_20_import_vinhos_br = merge_dataframes(dados_paraguai_anos_15_20_import_vinhos_br, df)
 
 # O resultado_final agora é um único DataFrame contendo a junção de todos os DataFrames
 
 # Remover a coluna 'ano' inplace
-dados_paraguai_anos_15_20_import_vinhos_br.drop(columns=['ano'], inplace=True)
-dados_paraguai_anos_15_20_import_vinhos_br.rename(columns={'usd': 'import_br_usd'}, inplace=True)
+# dados_paraguai_anos_15_20_import_vinhos_br.drop(columns=['ano'], inplace=True)
+# dados_paraguai_anos_15_20_import_vinhos_br.rename(columns={'usd': 'import_br_usd'}, inplace=True)
 
-estudo_mercado_paraguai = """
-Um estudo intitulado 'Estudo de Mercado de Vinhos, Espumantes e Sucos de Uva no Paraguai', encomendado pela Embaixada do Brasil em Assunção e conduzido pela consultoria ICA, apresentou dados relativos à quantidade de dólares exportados do Brasil (como país) para o Paraguai em produtos derivados de uva.
+# estudo_mercado_paraguai = """
+# Um estudo intitulado 'Estudo de Mercado de Vinhos, Espumantes e Sucos de Uva no Paraguai', encomendado pela Embaixada do Brasil em Assunção e conduzido pela consultoria ICA, apresentou dados relativos à quantidade de dólares exportados do Brasil (como país) para o Paraguai em produtos derivados de uva.
 
-Ao analisar os dados fornecidos pela Embrapa, que compila informações de exportação provenientes do Estado do Rio Grande do Sul, foi possível extrair conclusões relevantes. O gráfico evidencia que o montante exportado pelo estado do Rio Grande do Sul segue a tendência das exportações do mercado brasileiro para o Paraguai.
+# Ao analisar os dados fornecidos pela Embrapa, que compila informações de exportação provenientes do Estado do Rio Grande do Sul, foi possível extrair conclusões relevantes. O gráfico evidencia que o montante exportado pelo estado do Rio Grande do Sul segue a tendência das exportações do mercado brasileiro para o Paraguai.
 
-Destaca-se uma correlação extremamente forte, com um coeficiente de correlação de 0.9939 entre as duas variáveis. A pequena distância entre as duas linhas permite concluir que o Paraguai importou predominantemente do estado do Rio Grande do Sul.
+# Destaca-se uma correlação extremamente forte, com um coeficiente de correlação de 0.9939 entre as duas variáveis. A pequena distância entre as duas linhas permite concluir que o Paraguai importou predominantemente do estado do Rio Grande do Sul.
 
-Além disso, vemos que a distância entre as curvas é pequena. Podemos concluir que Rio Grande do Sul é o estado que majoritariamente exporta derivados de uva para o Paraguai.
-"""
-st.write(estudo_mercado_paraguai)
+# Além disso, vemos que a distância entre as curvas é pequena. Podemos concluir que Rio Grande do Sul é o estado que majoritariamente exporta derivados de uva para o Paraguai.
+# """
+# st.write(estudo_mercado_paraguai)
 
 # Configurando o estilo do Seaborn
-sns.set(style="whitegrid")
+# sns.set(style="whitegrid")
 
 # Definindo as cores
-color1 = (128, 0, 128)
-color2 = (190, 142, 230)
-color1 = tuple(x / 255.0 for x in color1)
-color2 = tuple(x / 255.0 for x in color2)
+# color1 = (128, 0, 128)
+# color2 = (190, 142, 230)
+# color1 = tuple(x / 255.0 for x in color1)
+# color2 = tuple(x / 255.0 for x in color2)
 
 # Criando o gráfico no Streamlit com modificações
-fig, ax = plt.subplots(figsize=(8, 6))
+# fig, ax = plt.subplots(figsize=(8, 6))
 
 # sns.lineplot(x='Ano', y='import_br_usd', data=dados_paraguai_anos_15_20_import_vinhos_br, label='BR - Exportação Derivados da Uva', color=color1, ax=ax)
-sns.lineplot(x='Ano', y='ValorUSD', data=dados_paraguai_anos_15_20_import_vinhos_br, label='RS - Exportação Derivados da Uva', color=color2, ax=ax)
+# sns.lineplot(x='Ano', y='ValorUSD', data=dados_paraguai_anos_15_20_import_vinhos_br, label='RS - Exportação Derivados da Uva', color=color2, ax=ax)
 
-ax.set_xticks(dados_paraguai_anos_15_20_import_vinhos_br['Ano'])
-ax.set_xticklabels(dados_paraguai_anos_15_20_import_vinhos_br['Ano'], rotation=45, ha='right')
+# ax.set_xticks(dados_paraguai_anos_15_20_import_vinhos_br['Ano'])
+# ax.set_xticklabels(dados_paraguai_anos_15_20_import_vinhos_br['Ano'], rotation=45, ha='right')
 
-plt.xlabel('Ano', labelpad=20)
-plt.ylabel('Valor de Exportação (USD)', labelpad=20)
-plt.title('Exportação de Derivados de Uva do Brasil para o Paraguai (2015-2020)', pad=15)
+# plt.xlabel('Ano', labelpad=20)
+# plt.ylabel('Valor de Exportação (USD)', labelpad=20)
+# plt.title('Exportação de Derivados de Uva do Brasil para o Paraguai (2015-2020)', pad=15)
 
-formatter = ticker.FuncFormatter(lambda x, pos: '{:,.0f}'.format(x).replace(',', '.'))
-ax.yaxis.set_major_formatter(formatter)
+# formatter = ticker.FuncFormatter(lambda x, pos: '{:,.0f}'.format(x).replace(',', '.'))
+# ax.yaxis.set_major_formatter(formatter)
 
-ax.set_ylim(0, 7000000)
+# ax.set_ylim(0, 7000000)
 
-ax.legend()
+# ax.legend()
 
 # Exibindo o gráfico
-st.pyplot(fig)
-st.markdown(
-    "<div style='text-align: center; font-size: 13px;'>Fontes: Embrapa | Consultoria ICA. Estudo de Mercado de Vinhos, Espumantes e Sucos de Uva no Paraguai</div>",
-    unsafe_allow_html=True
-)
+# st.pyplot(fig)
+# st.markdown(
+#     "<div style='text-align: center; font-size: 13px;'>Fontes: Embrapa | Consultoria ICA. Estudo de Mercado de Vinhos, Espumantes e Sucos de Uva no Paraguai</div>",
+#     unsafe_allow_html=True
+# )
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-corr = """
-A correlação entre 'Exportação Derivados de Uva do Brasil' e 'Exportação Derivados de Uva do Rio Grande do Sul' é: 0.9939.
-"""
-st.write(corr)
+# corr = """
+# A correlação entre 'Exportação Derivados de Uva do Brasil' e 'Exportação Derivados de Uva do Rio Grande do Sul' é: 0.9939.
+# """
+# st.write(corr)
 
 # correlacao = dados_paraguai_anos_15_20_import_vinhos_br['import_br_usd'].corr(dados_paraguai_anos_15_20_import_vinhos_br['ValorUSD'])
 
@@ -1052,7 +1052,7 @@ st.write(corr)
 # print(f"e 'Exportação Derivados de Uva do Rio Grande do Sul' é: {correlacao}")
 
 principal_exportador = """
-Confirmamos a conclusão de que o Rio Grande do Sul é o principal estado exportador de derivados de uva no Brasil, conforme evidenciado no gráfico abaixo, que apresenta dados de 2018 a 2021. O estado se destaca em todos os anos, com valores significativamente superiores aos demais.
+O Rio Grande do Sul é o principal estado exportador de derivados de uva no Brasil, conforme evidenciado no gráfico abaixo, que apresenta dados de 2018 a 2021. O estado se destaca em todos os anos, com valores significativamente superiores aos demais.
 """
 st.write(principal_exportador)
 
