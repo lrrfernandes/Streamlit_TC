@@ -1000,7 +1000,7 @@ Esse crescente consumo de bebidas álcoolicas benefíciou a exportação de deri
 """
 st.write(corr_retas)
 
-corr_ConsumoVsExportado = df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'].corr(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'])
+# corr_ConsumoVsExportado = df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'].corr(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'])
 
 # corr_ConsumoVsExportado = round(corr_ConsumoVsExportado,4)
 
