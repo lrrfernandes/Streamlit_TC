@@ -958,8 +958,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown("<br>", unsafe_allow_html=True)
-
 st.subheader("Um olhar especial para o Rio Grande do Sul")
 
 # top_paises_vinho = ['Paraguai']
@@ -11024,114 +11022,6 @@ st.write(GPEstatistica)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# st.subheader("Análise Demográfica - Paraguai")
-
-# consumo_2015_2019 = """
-# Foi estimado a quantidade de litros consumido de bebidas alcoólicas da população do Paraguai. A quantidade estimada de consumo alcoólico foi através da multiplicação entre quantidade de pessoas maiores de 20 anos e a quantidade de álcool consumido nos respectivos anos, entre 2015 e 2019.
-# O gráfico abaixo mostra o estimado de consumo alcoólico do Paraguai e o valor em litros exportado pelo estado do Rio Grande do Sul, entre 2015 a 2019.
-# A diferença entre os valores é muito grande, porém é possível verificar que a quantidade exportada segue a tendência do consumo alcoólico do país.
-# """
-# st.write(consumo_2015_2019)
-
-# corr_retas = """
-# A correlação entre essas duas retas é de: **0,9041**.
-
-# Esse crescente consumo de bebidas álcoolicas benefíciou a exportação de derivados de uva do Brasil. A população do Paraguai demandou mais bebidas álcoolicas e nossas vinícolas supriram em parte essa demanda.
-# """
-# st.write(corr_retas)
-
-# corr_ConsumoVsExportado = df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'].corr(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'])
-
-# corr_ConsumoVsExportado = round(corr_ConsumoVsExportado,4)
-
-# print(f"CORR: {corr_ConsumoVsExportado}")
-
-# df_consumo_alcool_litros_paraguay_2015_over = df_consumo_alcool_litros_paraguay_eua.query('Sex == "Both sexes" and Country == "Paraguay" and Year >= 2015')
-
-# dados_paraguai_anos_15_20_import_vinhos_br_2015_over = dados_paraguai_anos_15_20_import_vinhos_br.query('País == "Paraguai" and Ano >= 2015')
-
-# correlacao_importacaoUSD_pessoasOver20 = dados_paraguai_anos_15_20_import_vinhos_br['import_br_usd'].corr(df_demografico_pop_20_mais['People'])
-
-# Mesclar os DataFrames com base na coluna 'Year'
-# df_consumo_alcool_litros_paraguay_2015_over_with_people = pd.merge(
- #    df_consumo_alcool_litros_paraguay_2015_over,
- #    df_demografico_pop_20_mais[['Year', 'People']],
- #    on='Year',
- #    how='left'  # Use 'left' para preservar todas as linhas do DataFrame de consumo
-# )
-
-# df_consumo_alcool_litros_paraguay_2015_over_with_people['Liters_Total'] = df_consumo_alcool_litros_paraguay_2015_over_with_people['Liters'] * df_consumo_alcool_litros_paraguay_2015_over_with_people['People']
-
-# dados_paraguai_anos_15_20_import_vinhos_br_2015_over = dados_paraguai_anos_15_20_import_vinhos_br_2015_over.rename(columns={'Ano': 'Year'})
-# dados_paraguai_anos_15_20_import_vinhos_br_2015_over
-
-# df_consumo_alcool_litros_paraguay_2015_over_with_people_2 = pd.merge(
-  #   df_consumo_alcool_litros_paraguay_2015_over_with_people,
-   #  dados_paraguai_anos_15_20_import_vinhos_br_2015_over[['Year', 'Quantidade']],
-  #   on='Year',
-#     how='left'  # Use 'left' para preservar todas as linhas do DataFrame de consumo
-# )
-
-# Configuração do tamanho da figura
-# fig, ax = plt.subplots(figsize=(10, 8))
-
-# Definição de cores
-# color1 = (128, 0, 128)
-# color2 = (190, 142, 230)
-
-# Normalizar os valores RGB para o intervalo [0, 1]
-# color1 = tuple(x / 255.0 for x in color1)
-# color2 = tuple(x / 255.0 for x in color2)
-
-# Plotar as linhas e adicionar rótulos nos pontos
-# plot1 = sns.lineplot(x='Year', y='Liters_Total', data=df_consumo_alcool_litros_paraguay_2015_over_with_people_2, label='Consumo estimado de bebidas alcoólicas', color=color1)
-# plot2 = sns.lineplot(x='Year', y='Quantidade', data=df_consumo_alcool_litros_paraguay_2015_over_with_people_2, label='Exportação do Rio Grande do Sul', color=color2)
-
-# Adicionar rótulos nos pontos para o plot1
-# for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
-#     plot1.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
-#                df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line], 
-#                f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Liters_Total'][line]:,.0f}", 
-#                ha='center', va='bottom', rotation=45)
-
-
-# Adicionar rótulos nos pontos para o plot2
-# for line in range(0, df_consumo_alcool_litros_paraguay_2015_over_with_people_2.shape[0]):
-#     plot2.text(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'][line], 
-#                df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line], 
-#                f"{df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Quantidade'][line]:,.0f}", 
-#                ha='center', va='bottom')
-
-# Configurações adicionais do gráfico
-# plt.xticks(df_consumo_alcool_litros_paraguay_2015_over_with_people_2['Year'])
-
-# Formate a escala do eixo y para incluir separador de milhar com ponto
-# formatter = ticker.FuncFormatter(lambda x, pos: '{:,.0f}'.format(x).replace(',', '.'))
-# plt.gca().yaxis.set_major_formatter(formatter)
-
-# Coloque um limite para o valor y. Pegue o maior valor e coloque 20% a mais.
-# plt.ylim(0, 40000000)
-
-# Adicione rótulos e título ao gráfico
-# plt.xlabel('Ano', fontsize=14, labelpad=15)
-# plt.ylabel('Quantidade (litros)', fontsize=14, labelpad=15)
-# plt.title('Paraguai - Consumo de bebidas alcoólicas x Quantidade Exportada', fontsize=16, pad=20)
-
-# Ajustando o layout para evitar cortes
-# plt.tight_layout()
-
-# Adicionando a legenda
-# plt.legend()
-
-# Exibindo o gráfico
-# st.pyplot(fig)
-# st.markdown(
-#     "<div style='text-align: center; font-size: 13px;'>Fontes da análise demográfica: População Maior de 20 anos do Paraguai | Consumo de álcool no Paraguai | Exportação do Rio Grande do Sul</div>",
-#     unsafe_allow_html=True
-# )
-
-st.markdown("<br>", unsafe_allow_html=True)
-
 # Bibliotecas utilizadas
 from matplotlib.dates import DateFormatter, MonthLocator, YearLocator
 warnings.filterwarnings("ignore")
@@ -11144,18 +11034,11 @@ st.markdown("<br>", unsafe_allow_html=True)
 RS = """
 O Rio Grande do Sul é o maior produtor nacional de uva, contribuindo significativamente com aproximadamente 90% da produção nacional de uvas destinadas ao processamento. A Serra Gaúcha emerge como a principal zona produtora, responsável por cerca de 85% da produção de uvas no estado. Além disso, as regiões da Campanha Gaúcha, Serra do Sudeste, Campos de Cima da Serra e Vale Central também desempenham papéis proeminentes na atividade vitivinícola. Devido à magnitude da produção no Rio Grande do Sul, os dados desse estado são considerados como a principal base de referência para representação e análise do setor vitivinícola em âmbito nacional.
 
-A produção de uva é destinada não apenas ao consumo de mesa, mas também à elaboração de sucos e vinhos, tanto de forma artesanal quanto industrial. Abaixo, segue uma imagem representando as Indicações Geográficas (IG) no território nacional.
+A produção de uva é destinada não apenas ao consumo de mesa, mas também à elaboração de sucos e vinhos, tanto de forma artesanal quanto industrial.
 """
 st.write(RS)
 
-st.markdown("<br>", unsafe_allow_html=True)
-
-st.subheader("Indicações Geográficas (IG) de Vinhos do Brasil e Associações de Produtores")
-
-# Adicionando a imagem
-# st.image("indicacoes_geograficas.jpg", caption="Fonte: https://www.embrapa.br/uva-e-vinho/indicacoes-geograficas-de-vinhos-do-brasil", use_column_width=True)
-
-st.markdown("<br>", unsafe_allow_html=True)
+st.subheader("O Impacto da Climatologia na Produção de Uvas e Vinhos")
 
 # Influência da temperatura na videira
 temperatura_videira = """
@@ -13237,36 +13120,7 @@ st.markdown(
 st.markdown("<br>", unsafe_allow_html=True)
 
 influencia_El_Nino = """
-As elevadas temperaturas não tiveram um impacto adverso direto na
-produção. Houve períodos em que as temperaturas estavam
-consideravelmente acima da média, como evidenciado em 2022. No entanto,
-apesar dessas condições, a produção foi robusta nesse ano, sugerindo que as
-altas temperaturas não exercem uma influência determinante nas condições
-das safras. Ao analisar as temperaturas de forma ordenada, da estação mais
-quente para a mais fria, não foi possível identificar um padrão visual claro que
-permitisse fazer afirmações conclusivas. Além de 2022, o ano de 2011 também
-se destacou como um dos mais quentes, correlacionado a um aumento
-significativo na produção. Em resumo, as oscilações de temperatura estiveram
-presentes tanto nos picos quanto nos declínios na produção.
-
-A influência do fenômeno El Niño nas chuvas pode ser significativa para a
-produção e safra das uvas ao longo dos anos de 2007 a 2022. O El Niño,
-caracterizado pelo aquecimento anômalo das águas do Oceano Pacífico, tem
-potencial para alterar os padrões climáticos em diversas regiões do mundo,
-inclusive afetando as condições meteorológicas em áreas vitivinícolas.
-
-Durante os anos em que o El Niño esteve presente, é possível observar
-variações nas chuvas que podem impactar diretamente a produção de uvas.
-Eventos climáticos extremos, como chuvas intensas ou períodos de seca
-prolongados associados ao El Niño, podem influenciar o ciclo de crescimento
-das vinhas, afetando a qualidade e quantidade da safra.
-
-Notamos que nos anos de ocorrência do fenômeno El Niño, há uma correlação
-com reduções significativas, sejam sutis ou extremas, na produção de vinhos,
-especialmente os tintos, tanto os de mesa quanto os finos, que são
-comercializados em grande escala. A previsão de um El Niño para 2024 destaca a importância de os agricultores estarem atentos às suas safras neste
-ano específico, considerando os potenciais impactos adversos nas condições
-climáticas.
+A variação das temperaturas, mesmo em anos mais quentes como 2022 e 2011, não teve um impacto negativo direto na produção de uvas, indicando uma resiliência do setor a condições climáticas extremas. Além disso, a influência do El Niño nas chuvas ao longo de 2007 a 2022 foi observada, destacando sua capacidade de afetar o ciclo de crescimento das vinhas. A correlação entre a ocorrência do El Niño e reduções na produção de vinhos, especialmente tintos, sugere a importância de os agricultores monitorarem atentamente as safras em anos como 2024, quando há previsão desse fenômeno climático.
 """
 st.write(influencia_El_Nino)
 
@@ -13289,19 +13143,18 @@ Investir no setor vitivinícola brasileiro, especialmente no estado do Rio Grand
    - O Rio Grande do Sul, responsável por mais de 90% da produção nacional, destaca-se como o principal estado exportador de derivados de uva no Brasil.
    - Condições climáticas favoráveis, com temperaturas ideais entre 20°C e 30°C, contribuem para uma produção consistente e de alta qualidade.
 
-**4. Correlação Positiva com o Paraguai:**
-   - A forte correlação entre as exportações do Rio Grande do Sul e o mercado paraguaio ressalta a confiabilidade e a liderança desse estado no cenário vitivinícola brasileiro.
-
-**5. Análise de Riscos:**
+**4. Análise de Riscos:**
    - A análise climática indica a resiliência do Rio Grande do Sul frente a fenômenos climáticos passados, como o El Niño, não comprometendo significativamente a produção.
    - Monitoramento constante e práticas agrícolas eficientes contribuem para mitigar riscos climáticos.
 
-**6. Recomendações de Marketing:**
+**5. Recomendações de Marketing:**
    - Recomenda-se estratégias de marketing e promoção para consolidar e expandir a presença em mercados como Estados Unidos e Rússia, aproveitando seu potencial de crescimento.
 
 **Em síntese, investir no setor vitivinícola brasileiro, com ênfase no Rio Grande do Sul, oferece aos investidores a perspectiva de participar de um mercado em expansão, impulsionado por exportações consistentes e favoráveis condições de produção. A resiliência demonstrada diante de desafios climáticos passados e as estratégias de crescimento sustentável posicionam o setor como uma escolha confiável para investimentos sólidos e de longo prazo.**
 """
 st.write(conclusao)
+
+st.markdown("<br>", unsafe_allow_html=True)
 
 st.subheader("Referências")
 
