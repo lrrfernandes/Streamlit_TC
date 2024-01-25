@@ -17,6 +17,7 @@ from matplotlib.ticker import FuncFormatter
 titulo_principal = """
 <h1 style="color: #5e9ca0;">&Aacute;rea do Investidor do Agroneg&oacute;cio</h1>
 <pre style="color: #2e6c80;">Reportagem de: Wellington Brito, Andr&eacute; Pedroso, Raphael Gottstein, David Oliveira, Lucas Fernandes</pre>
+<pre style="color: #2e6c80;">Data: Janeiro/2024</pre>
 """
 st.markdown(titulo_principal, unsafe_allow_html=True)
 
