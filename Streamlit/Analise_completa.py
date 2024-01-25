@@ -1062,7 +1062,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 paleta = sns.color_palette("rocket_r", 24)
 
 # Configuração do tamanho total do gráfico
-fig, axes = plt.subplots(2, 2, figsize=(24, 12))
+fig, axes = plt.subplots(2, 2, figsize=(30, 12))
 
 # Loop para criar quatro subplots
 anos = ["ANO_2018", "ANO_2019", "ANO_2020", "ANO_2021"]
