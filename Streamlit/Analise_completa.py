@@ -1023,10 +1023,10 @@ plt.xlabel('Ano', labelpad=20)
 plt.ylabel('Valor de Exportação (USD)', labelpad=20)
 plt.title('Exportação de Derivados de Uva do Brasil para o Paraguai (2015-2020)', pad=15)
 
-# formatter = ticker.FuncFormatter(lambda x, pos: '{:,.0f}'.format(x).replace(',', '.'))
-# ax.yaxis.set_major_formatter(formatter)
+formatter = ticker.FuncFormatter(lambda x, pos: '{:,.0f}'.format(x).replace(',', '.'))
+ax.yaxis.set_major_formatter(formatter)
 
-# ax.set_ylim(0, 7000000)
+ax.set_ylim(0, 7000000)
 
 ax.legend()
 
