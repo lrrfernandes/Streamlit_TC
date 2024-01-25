@@ -36,11 +36,6 @@ def download_csv_from_github(url, filename):
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
-# Replace 'url' with the raw GitHub URL of your CSV file
-url = 'https://raw.githubusercontent.com/username/repository/branch/filename.csv'
-# Replace 'filename' with the desired filename for the downloaded CSV file
-filename = 'filename.csv'
-
 titulo_principal = """
 <h1 style="color: #5e9ca0;"><span style="background-color: #ffffff; color: #993366;">Clube Wine S.A.</span></h1>
 <h2><span style="background-color: #ffffff; color: #993366;">Departamento de Ci&ecirc;ncia de Dados</span></h2>
