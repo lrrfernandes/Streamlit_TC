@@ -9,14 +9,10 @@ import requests
 warnings.filterwarnings("ignore")
 
 import matplotlib.ticker as ticker
-import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 from io import StringIO
 from datetime import date
 from matplotlib.ticker import FuncFormatter
-
-
 
 # Título
 st.title('Aspectos Macroeconômicos das Exportações de Vinho no Brasil')
@@ -1090,14 +1086,7 @@ Para a correlação, será utilizado a média da taxa de câmbio anual.
 """
 st.write(corr_cambio)
 
-import pandas as pd
-import matplotlib.ticker as ticker
-import matplotlib.pyplot as plt
-import numpy as np
-import seaborn as sns
-# from io import StringIO
 import matplotlib.dates as mdates
-from datetime import date
 
 # IMPORTANDO DADOS
 text_io = """
@@ -11234,13 +11223,7 @@ st.markdown(
 st.markdown("<br>", unsafe_allow_html=True)
 
 # Bibliotecas utilizadas
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 from matplotlib.dates import DateFormatter, MonthLocator, YearLocator
-import sys
-import warnings
 warnings.filterwarnings("ignore")
 
 # Título
