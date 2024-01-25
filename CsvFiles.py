@@ -55,7 +55,7 @@ st.write(analise_economica)
 # filename = "/mount/src/streamlit_tc/Streamlit/ExpVinho.csv"
 df = pd.read_csv('EXP_VINHO.csv', sep=';')
 # df = pd.read_csv(filename, sep=";")
-st.dataframe(df)
+# st.dataframe(df)
 
 # dados exportados do site da vinícola
 # df = pd.read_csv('ExpVinho.csv', sep=";")
