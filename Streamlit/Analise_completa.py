@@ -10817,7 +10817,7 @@ Data;Cambio
 02/01/1985;0,0000
 """
 text = StringIO(text_io)
-dados = pd.read_csv(text, sep=";")
+dados = pd.read_csv(text, encoding='ISO-8859-1', skiprows=0, sep=';', skipfooter=12, thousands='.', decimal=',', engine ="python")
 
 # dados = pd.read_csv("TAXA_CAMBIO_HISTORICO.csv", encoding='ISO-8859-1', skiprows=0, sep=';', skipfooter=12, thousands='.', decimal=',', engine ="python")
 
