@@ -1057,6 +1057,10 @@ O Rio Grande do Sul é o principal estado exportador de derivados de uva no Bras
 st.write(principal_exportador)
 
 st.markdown("<br>", unsafe_allow_html=True)
+st.markdown(
+    "<div style='text-align: center; font-size: 13px;'>Clique na seta para expandir.</div>",
+    unsafe_allow_html=True
+)
 
 # Configuração da paleta de cores
 paleta = sns.color_palette("rocket_r", 24)
