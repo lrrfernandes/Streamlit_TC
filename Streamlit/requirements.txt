@@ -1,8 +1,5 @@
 matplotlib
-streamlit
 pandas
 numpy
 matplotlib
 seaborn
-requests
-
