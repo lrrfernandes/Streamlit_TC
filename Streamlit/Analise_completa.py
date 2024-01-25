@@ -211,6 +211,10 @@ Sociodemographic;Demographic;Population_aged_20_and_over;2022;4225000
 """
 text = StringIO(text_io)
 df_demografico_pop_20_mais = pd.read_csv(text, sep=";")
+text_io = """
+"""
+text = """
+"""
 # st.dataframe(df_demografico_pop_20_mais)
 
 # url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Demografico_Pop_Idade_20_mais.csv"
@@ -349,6 +353,10 @@ United States of America;2019;Both sexes;9,97
 """
 text = StringIO(text_io)
 df_consumo_alcool_litros_paraguay_eua = pd.read_csv(text, sep=";")
+text_io = """
+"""
+text = """
+"""
 
 # url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Consumo_Alcool_Paraguay_EUA.csv"
 # response = requests.get(url)
@@ -390,6 +398,10 @@ Tocantins;12;12;12;12
 """
 text = StringIO(text_io)
 df_br_estado_producao_uvas_ton = pd.read_csv(text, sep=";")
+text_io = """
+"""
+text = """
+"""
 
 # url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/Viticultura_brasileira.csv"
 # response = requests.get(url)
@@ -408,6 +420,10 @@ ano;usd
 """
 text = StringIO(text_io)
 dados_import_vinhos_br = pd.read_csv(text, sep=";")
+text_io = """
+"""
+text = """
+"""
 
 # url = "https://github.com/lrrfernandes/Streamlit_TC/blob/main/Streamlit/import_vinhos_br.csv"
 # response = requests.get(url)
@@ -10819,12 +10835,20 @@ Data;Cambio
 """
 text = StringIO(text_io)
 dados = pd.read_csv(text, encoding='ISO-8859-1', skiprows=0, sep=';', skipfooter=12, thousands='.', decimal=',', engine ="python")
+text_io = """
+"""
+text = """
+"""
 
 # dados = pd.read_csv("TAXA_CAMBIO_HISTORICO.csv", encoding='ISO-8859-1', skiprows=0, sep=';', skipfooter=12, thousands='.', decimal=',', engine ="python")
 
 text_io = text_io_exp_vinho
 text = StringIO(text_io)
 dados_vinho = pd.read_csv(text, sep=";")
+text_io = """
+"""
+text = """
+"""
 
 # dados_vinho = pd.read_csv("ExpVinho.csv", sep=";") 
 
@@ -12128,6 +12152,10 @@ Bento Gonçalves,2022-12-01,20.950000000000003
 """
 text = StringIO(text_io)
 analise_mediana_mensal = pd.read_csv(text, sep=",", parse_dates=["Data de Referência"])
+text_io = """
+"""
+text = """
+"""
 # analise_mediana_mensal = pd.read_csv("analise_mediana_mensal.csv", parse_dates=["Data de Referência"])
 
 text_io = """
@@ -13095,6 +13123,10 @@ Bento Gonçalves,2022-12-01,135.0
 """
 text = StringIO(text_io)
 analise_precipitacao_mensal = pd.read_csv(text, sep=",", parse_dates=["Data de Referência"])
+text_io = """
+"""
+text = """
+"""
 # analise_precipitacao_mensal = pd.read_csv("analise_precipitacao_mensal.csv", parse_dates=["Data de Referência"])
 
 # Lista de cidades
