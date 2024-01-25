@@ -11151,7 +11151,7 @@ df_consumo_alcool_litros_paraguay_2015_over = df_consumo_alcool_litros_paraguay_
 
 dados_paraguai_anos_15_20_import_vinhos_br_2015_over = dados_paraguai_anos_15_20_import_vinhos_br.query('País == "Paraguai" and Ano >= 2015')
 
-correlacao_importacaoUSD_pessoasOver20 = dados_paraguai_anos_15_20_import_vinhos_br['import_br_usd'].corr(df_demografico_pop_20_mais['People'])
+# correlacao_importacaoUSD_pessoasOver20 = dados_paraguai_anos_15_20_import_vinhos_br['import_br_usd'].corr(df_demografico_pop_20_mais['People'])
 
 # Mesclar os DataFrames com base na coluna 'Year'
 df_consumo_alcool_litros_paraguay_2015_over_with_people = pd.merge(
