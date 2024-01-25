@@ -31,6 +31,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 objetivo = """
 Nesta análise, você vai ver a macroeconomia das exportações de vinho do Rio Grande do Sul. O intuito é identificar os principais países importadores do nosso produto, avaliar a influência da taxa de câmbio do dólar sobre as exportações e examinar as condições climáticas que justificam a posição dominante da nossa região, o Rio Grande do Sul, responsável por mais de 90% da produção de vinho no Brasil.
+Por fim, responder: É ainda interessante investir em vinho no Brasil?
 """
 st.write(objetivo)
 
