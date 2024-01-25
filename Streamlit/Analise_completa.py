@@ -17,6 +17,7 @@ from matplotlib.ticker import FuncFormatter
 titulo_principal = """
 <h1 style="color: #5e9ca0;"><span style="background-color: #ffffff; color: #993366;">Clube Wine S.A.</span></h1>
 <h2><span style="background-color: #ffffff; color: #993366;">Departamento de Ci&ecirc;ncia de Dados</span></h2>
+<h2><span style="background-color: #ffffff; color: #993366;">_________________________________</span></h2>
 <p>&nbsp;</p>
 <h1 style="color: #5e9ca0;"><span style="text-decoration: underline;">&Aacute;rea do Investidor</span> - An&aacute;lise da Viticultura do Rio Grande do Sul</h1>
 <p>&nbsp;</p>
