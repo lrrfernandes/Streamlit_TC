@@ -1020,9 +1020,9 @@ A correlação entre 'Exportação Derivados de Uva do Brasil' e 'Exportação D
 """
 st.write(corr)
 
-correlacao = dados_paraguai_anos_15_20_import_vinhos_br['import_br_usd'].corr(dados_paraguai_anos_15_20_import_vinhos_br['ValorUSD'])
+# correlacao = dados_paraguai_anos_15_20_import_vinhos_br['import_br_usd'].corr(dados_paraguai_anos_15_20_import_vinhos_br['ValorUSD'])
 
-correlacao = round(correlacao, 4)
+# correlacao = round(correlacao, 4)
 
 # print("A correlação entre 'Exportação Derivados de Uva do Brasil'")
 # print(f"e 'Exportação Derivados de Uva do Rio Grande do Sul' é: {correlacao}")
