@@ -10815,7 +10815,6 @@ Data;Cambio
 04/01/1985;0,0000
 03/01/1985;0,0000
 02/01/1985;0,0000
-||Hide;
 """
 text = StringIO(text_io)
 dados = pd.read_csv(text, sep=";")
